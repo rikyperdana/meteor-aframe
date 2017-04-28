@@ -1,0 +1,63 @@
+template(name='layout')
+    +yield
+
+template(name='home')
+    a-scene
+        a-box(
+            position = '-1 0.5 1'
+            rotation = '0 45 0'
+            width = '1'
+            height = '1'
+            depth = '1'
+            color = '#4CC3D9'
+        )
+        a-sphere(
+            position = '0 1.25 -1'
+            radius = '1.25'
+            color = '#EF2D5E'
+        )
+        a-cylinder(
+            position = '1 0.75 1'
+            radius = '0.5'
+            height = '1.5'
+            color = '#FFC65D'
+        )
+        a-plane(
+            position = '0 0 0'
+            rotation = '-90 0 0'
+            width = '4'
+            height = '4'
+            color = '#7BC8A4'
+        )
+        a-sky(
+            color = '#ECECEC'
+        )
+
+template(name='image')
+    a-scene
+        a-sky(
+            src = 'pemandangan.jpg'
+            rotation = '0 -130 0'
+        )
+
+template(name='gallery')
+    a-scene
+        a-camera(position = '0 2 4')
+            a-cursor(
+                color = 'red'
+                fuse = 'true'
+                timeout = '10'
+            )
+        a-sphere(
+            color = 'yellow'
+            radius = '1'
+            position = '-4 2 0'
+            set-sky = 'https://c3.staticflickr.com/2/1475/26239222850_cabde81c39_k.jpg'
+        )
+        a-sphere(
+            color = 'blue'
+            radius = '1'
+            position = '4 2 0'
+            set-sky = 'https://c2.staticflickr.com/2/1688/25044226823_53c979f8a1_k.jpg'
+        )
+        a-sky
